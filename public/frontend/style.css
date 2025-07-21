@@ -1,0 +1,15 @@
+:root {
+    --primary: #692777;
+    --secondary: #e6227b;
+    --light-primary: #6927771a;
+    --text-color: #666666;
+}
+
+.container {
+    width: 86%;
+    margin: auto;
+}
+
+p{
+    color: var(--text-color);
+}
