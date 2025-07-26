@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -12,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('company_contacts', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->string("image");
-            $table->longText("content");
-            $table->integer("views")->default(0);
-            $table->longText('meta_keywords')->nullable();
-            $table->longText('meta_description')->nullable();
+            $table->string('title');
+            $table->string('number');
+            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('company_contacts');
     }
 };
